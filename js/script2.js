@@ -10,15 +10,13 @@ function addtocart(){
         var arr=[];
     
     }
-
-
 $('.addtocarbtn').click(function (e) { 
     e.preventDefault();
        var index=$(this).attr('data-id');
        var name=$(this).attr('data-name');
        var price=Number($(this).attr('data-price'));
         var item=new Object;
-        item.iq=index;
+        item.id=index;
         item.name=name;
         item.price=price;
         item.qty=1;
@@ -61,6 +59,7 @@ function fetch(){
     if(localStorage.getItem('cart') && localStorage.getItem('cart')!=null){
         var result = localStorage.getItem('cart');
         var arr = JSON.parse(result);
+        console.log(arr);
         var str=``;
         var i=1;
         arr.forEach((el,index)=>{
